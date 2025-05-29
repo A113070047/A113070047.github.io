@@ -7,3 +7,8 @@ height: 20%;
 width: 50%;
 
 }
+
+
+.modal-body img {
+  width: 100px;
+}
