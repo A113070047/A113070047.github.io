@@ -226,7 +226,7 @@
 
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+            <button type="button" class="btn btn-secondary btn-c" data-bs-dismiss="modal">關閉</button>
             <!--<button type="button" class="btn btn-primary"></button>-->
       </div>
     </div>
@@ -319,6 +319,7 @@
         <script>
             // Add this inside the <script> tag at the bottom of the HTML
         const playPauseBtn = document.getElementById('playPauseBtn');
+        const modalfooter = document.querySelector('.btn-c')
         const progressBar = document.querySelector('.progress-bar');
         const currentTimeSpan = document.getElementById('currentTime');
         const durationSpan = document.getElementById('duration');
@@ -333,6 +334,14 @@
     } else {
         audio.play();
         playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> ';
+    }
+    isPlaying = !isPlaying;
+}
+
+ function closeaudio() {
+    if (isPlaying) {
+        audio.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play">';
     }
     isPlaying = !isPlaying;
 }
@@ -353,7 +362,9 @@ function formatTime(seconds) {
 }
 
 playPauseBtn.addEventListener('click', togglePlayPause);
+modalfooter.addEventListener('click', closeaudio);
 audio.addEventListener('timeupdate', updateProgress);
+audio.volume = 0.1;
         </script>
     </body>
 </html>
