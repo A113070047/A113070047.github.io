@@ -50,6 +50,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">技能</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">興趣</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">獎項</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">作品集</a></li>
                 </ul>
             </div>
         </nav>
@@ -203,10 +204,10 @@
             </div>
             <div class="modal-body ">
               <!--放音樂的地方-->
-                <img src="assets/img/青春コンプレックス.jpg" class="img-thumbnail" alt="...   "> 
-              <!--音樂播放器-->
-            <h5 class="card-title">青春コンプレックス</h5>
-            <p class="card-text">結束バンド</p>
+                <a href="https://www.youtube.com/watch?v=igg0iHG8MR4" target="_blank"><img src="assets/img/あの夏のいつかは.jpg" class="img-thumbnail music-cover" alt="...   "></a>
+                <!--音樂播放器-->
+            <h5 class="card-title">あの夏のいつかは|2023 Ver.</h5>
+            <p class="card-text">*Luna/ねんね</p>
             <div class="progress mb-3">
                 <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
                     aria-valuemax="100">
@@ -245,47 +246,48 @@
                     <ul class="fa-ul mb-0">
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Google Analytics Certified Developer
+                            日本語能力試驗 JLPT N1合格
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Mobile Web Specialist - Google Certification
+                            日本語能力試驗 JLPT N2合格
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            日本語能力試驗 JLPT N3合格
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                             1
                             <sup>st</sup>
-                            Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            1
-                            <sup>st</sup>
-                            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
+                            
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                             2
                             <sup>nd</sup>
-                            Place - University of Colorado Boulder - Emerging Tech Competition 2008
+                            
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                             1
                             <sup>st</sup>
-                            Place - James Buchanan High School - Hackathon 2006
+                           
                         </li>
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
                             3
                             <sup>rd</sup>
-                            Place - James Buchanan High School - Hackathon 2005
+                            
                         </li>
                     </ul>
                 </div>
             </section>
         </div>
 
+        <!--作品集預定地-->
+        <div id="portfolio"></div>
+        
         <div id="carouselExampleIndicators" class="carousel slide carousel-item-size" data-bs-ride="carousel" >
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -323,19 +325,66 @@
         const progressBar = document.querySelector('.progress-bar');
         const currentTimeSpan = document.getElementById('currentTime');
         const durationSpan = document.getElementById('duration');
+        const nextbtn = document.getElementById('nextBtn');
+        const backbtn = document.getElementById('prevBtn');
+        const musictitle = document.querySelector('.card-title');
+        const musicartist = document.querySelector('.card-text');
+        const musiccover = document.querySelector('.music-cover');
 
-        let audio = new Audio('assets/audio/01 青春コンプレックス.mp3');
+        const playlist = [
+            {title:'あの夏のいつかは|2023 Ver.', src:'assets/audio/Luna - あの夏のいつかは (Someday in that Summer) feat.ねんね  2023 Ver. - Luna.mp3', cover:'assets/img/あの夏のいつかは.jpg',artist:'*Luna/ねんね'},
+            {title:'青春コンプレックス',src:'assets/audio/01 青春コンプレックス.mp3', cover:'assets/img/青春コンプレックス.jpg',artist:'結束バンド'},
+            {title:'Luna say maybe',src:'assets/audio/Luna say maybe - Hatsuboshi Gakuen.mp3', cover:'assets/img/luna say maybe.jpg',artist:'月村手毬'},
+            {title:'白線',src:'assets/audio/白線 - Hatsuboshi Gakuen.mp3', cover:'assets/img/白線.jpg',artist:'葛城リーリャ'},
+            {title:'Campus mode!!',src:'assets/audio/Campus mode!! - Hatsuboshi Gakuen.mp3', cover:'assets/img/campus mode.jpg',artist:'初星学園'}
+        ]
+
+        
+        let currentIndex = 0;
+        let audio = new Audio(playlist[currentIndex].src);
         let isPlaying = false;
+
+        function loadSong(index) {
+        audio.pause();
+        audio = new Audio(playlist[index].src);
+        audio.volume = 0.1; // 音量設定
+        musictitle.textContent = playlist[index].title;
+        musicartist.textContent = playlist[index].artist;
+        musiccover.src = playlist[index].cover;
+
+        progressBar.style.width = '0%';
+        currentTimeSpan.textContent = '0:00';
+        durationSpan.textContent = '0:00';
+        
+        if (isPlaying) {
+        audio.play();
+        }
+        audio.addEventListener('timeupdate', updateProgress); 
+}
 
         function togglePlayPause() {
     if (isPlaying) {
         audio.pause();
         playPauseBtn.innerHTML = '<i class="fas fa-play">';
+        audio.volume = 0.1;
     } else {
         audio.play();
         playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> ';
+        audio.volume = 0.1;
     }
     isPlaying = !isPlaying;
+}
+
+function playNext() {
+  currentIndex = (currentIndex + 1) % playlist.length;
+  loadSong(currentIndex);
+  
+}
+
+function playPrev() {
+  currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+  loadSong(currentIndex);
+  
 }
 
  function closeaudio() {
@@ -362,8 +411,11 @@ function formatTime(seconds) {
 }
 
 playPauseBtn.addEventListener('click', togglePlayPause);
+nextbtn.addEventListener('click', playNext);
+backbtn.addEventListener('click', playPrev);
 modalfooter.addEventListener('click', closeaudio);
 audio.addEventListener('timeupdate', updateProgress);
+
 audio.volume = 0.1;
         </script>
     </body>
