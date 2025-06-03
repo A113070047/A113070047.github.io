@@ -1,3 +1,8 @@
+
+
+.bg-primary {
+  background-color: #73877B !important;
+}
 h1 {
   color: red;
 }
@@ -7,7 +12,19 @@ height: 20%;
 width: 50%;
 
 }
+.music-url{
+  padding: 0;
+}
 
+.cover-pm {
+  padding: 0;
+  margin: 0;
+  width: 110px;
+}
+.music-text{
+  padding: 0;
+  margin: 0;
+}
 
 .modal-body img {
   width: 100px;

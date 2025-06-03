@@ -203,11 +203,20 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
-              <!--放音樂的地方-->
-                <a href="https://www.youtube.com/watch?v=igg0iHG8MR4" target="_blank"><img src="assets/img/あの夏のいつかは.jpg" class="img-thumbnail music-cover" alt="...   "></a>
-                <!--音樂播放器-->
-            <h5 class="card-title">あの夏のいつかは|2023 Ver.</h5>
-            <p class="card-text">*Luna/ねんね</p>
+              <div class="container">
+                <div class="row">
+                      <div class="col-1 cover-pm">
+                          <!--放音樂的地方-->
+                            <a class="music-url" href="https://www.youtube.com/watch?v=igg0iHG8MR4" target="_blank"><img src="assets/img/あの夏のいつかは.jpg" class="img-thumbnail music-cover" alt="...   "></a>
+                          <!--音樂播放器-->
+                      </div>
+                    <div class="col-5 align-self-end music-text">
+                        <h5 class="card-title music-text-up">あの夏のいつかは|2023 Ver.</h5>
+                        <p class="card-text music-text-down">*Luna/ねんね</p>
+                    </div>
+                    <div class="col-5"></div>
+                </div>
+              </div>
             <div class="progress mb-3">
                 <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
                     aria-valuemax="100">
@@ -330,13 +339,14 @@
         const musictitle = document.querySelector('.card-title');
         const musicartist = document.querySelector('.card-text');
         const musiccover = document.querySelector('.music-cover');
+        const musicurl = document.querySelector('.music-url');
 
         const playlist = [
-            {title:'あの夏のいつかは|2023 Ver.', src:'assets/audio/Luna - あの夏のいつかは (Someday in that Summer) feat.ねんね  2023 Ver. - Luna.mp3', cover:'assets/img/あの夏のいつかは.jpg',artist:'*Luna/ねんね'},
-            {title:'青春コンプレックス',src:'assets/audio/01 青春コンプレックス.mp3', cover:'assets/img/青春コンプレックス.jpg',artist:'結束バンド'},
-            {title:'Luna say maybe',src:'assets/audio/Luna say maybe - Hatsuboshi Gakuen.mp3', cover:'assets/img/luna say maybe.jpg',artist:'月村手毬'},
-            {title:'白線',src:'assets/audio/白線 - Hatsuboshi Gakuen.mp3', cover:'assets/img/白線.jpg',artist:'葛城リーリャ'},
-            {title:'Campus mode!!',src:'assets/audio/Campus mode!! - Hatsuboshi Gakuen.mp3', cover:'assets/img/campus mode.jpg',artist:'初星学園'}
+            {title:'あの夏のいつかは|2023 Ver.', src:'assets/audio/Luna - あの夏のいつかは (Someday in that Summer) feat.ねんね  2023 Ver. - Luna.mp3', cover:'assets/img/あの夏のいつかは.jpg',artist:'*Luna/ねんね',url:'https://www.youtube.com/watch?v=igg0iHG8MR4'},
+            {title:'青春コンプレックス',src:'assets/audio/01 青春コンプレックス.mp3', cover:'assets/img/青春コンプレックス.jpg',artist:'結束バンド',url:'https://www.youtube.com/watch?v=Gc3NKC8TQtY&list=OLAK5uy_k0x6z9NnS98wi0k_kgbYae_rCVvLWs7rc'},
+            {title:'Luna say maybe',src:'assets/audio/Luna say maybe - Hatsuboshi Gakuen.mp3', cover:'assets/img/luna say maybe.jpg',artist:'月村手毬',url:'https://www.youtube.com/watch?v=NBL9sMFXj1g'},
+            {title:'白線',src:'assets/audio/白線 - Hatsuboshi Gakuen.mp3', cover:'assets/img/白線.jpg',artist:'葛城リーリャ',url:'https://www.youtube.com/watch?v=9qCDnZY3_G0'},
+            {title:'Campus mode!!',src:'assets/audio/Campus mode!! - Hatsuboshi Gakuen.mp3', cover:'assets/img/campus mode.jpg',artist:'初星学園',url:'https://www.youtube.com/watch?v=ykc7Rx7cggE'}
         ]
 
         
@@ -351,6 +361,7 @@
         musictitle.textContent = playlist[index].title;
         musicartist.textContent = playlist[index].artist;
         musiccover.src = playlist[index].cover;
+        musicurl.href = playlist[index].url;
 
         progressBar.style.width = '0%';
         currentTimeSpan.textContent = '0:00';
