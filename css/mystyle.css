@@ -3,29 +3,45 @@
 .bg-primary {
   background-color: #73877B !important;
 }
-h1 {
-  color: red;
+
+.resume-section-content h1 span {
+  color: #73877B !important;
+}
+
+.subheading a {
+  color: #73877B !important;
+}
+
+.subheading a:hover {
+  color: gray !important;
+  text-decoration: none !important;
 }
 
 .carousel-item-size {
-height: 20%;
-width: 50%;
+height: 20% !important;
+width: 50% !important;
 
 }
+
 .music-url{
-  padding: 0;
+  padding: 0 !important;
 }
 
-.cover-pm {
-  padding: 0;
-  margin: 0;
-  width: 110px;
+.playlist-pm {
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
+.cover-pm {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 110px !important;
+}
+
 .music-text{
-  padding: 0;
-  margin: 0;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .modal-body img {
-  width: 100px;
+  width: 100px !important;
 }
