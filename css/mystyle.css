@@ -1,3 +1,58 @@
+/*-----------------------------------------------
+ * LOADING
+-------------------------------------------------*/
+/*.loading{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10002;
+	
+}
+.loading:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.loadingElement{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/**
+* 共通
+**/
+/*:root {
+  --color-orange:orange;
+  --color-blue:blue;
+}
+
+.loadingCircle.-orange{
+	background-color: var(--color-orange);
+}
+.loadingCircle.-blue{
+	background-color: var(--color-blue);
+}
+.loadingCircle.-white{
+	background-color: #fafaeb;
+}
+
+
+
+
+
+/*loading*/
 
 .bg-primary {
   background-color: #73877B !important;
@@ -88,4 +143,23 @@ width: 50% !important;
 }
 .animehw {
   height: 600px;
+}
+
+.int1 {
+  padding-bottom: 200px !important;
+}
+
+.int2 {
+  padding-bottom: 200px !important;
+}
+
+
+.skill-svg {
+  position: relative;
+  bottom: 4px !important;
+} 
+
+.useless {
+  font-size: 20px !important;
+  padding-bottom: 3px
 }
