@@ -23,6 +23,16 @@ width: 50% !important;
 
 }
 
+.btn-primary {
+  background-color: #73877B !important;
+  border: #73877B !important;
+  color: #fff !important;
+}
+
+.btn-text {
+  color: #fff !important;
+}
+
 .music-url{
   padding: 0 !important;
 }
