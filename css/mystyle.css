@@ -1,5 +1,4 @@
 
-
 .bg-primary {
   background-color: #73877B !important;
 }
@@ -52,6 +51,29 @@ width: 50% !important;
   margin: 0 !important;
 }
 
-.modal-body img {
-  width: 100px !important;
+
+.game-size {
+  width: 90%;
+}
+
+.figure {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+
+.figure::after {
+  background-color: #73877B;
+  content: "";
+  height: 90%;
+  width: 90%;
+  position: absolute !important;
+  bottom: 8%;
+  right: 8%;
+
+  border-radius: 0.375rem;
+  z-index: -1;
+}
+.animehw {
+  height: 600px;
 }
