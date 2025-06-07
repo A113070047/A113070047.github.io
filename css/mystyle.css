@@ -161,5 +161,9 @@ width: 50% !important;
 
 .useless {
   font-size: 20px !important;
-  padding-bottom: 3px
+  padding-bottom: 3px;
+}
+
+.anime-size {
+  width: 80% !important;
 }
