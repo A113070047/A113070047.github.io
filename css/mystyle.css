@@ -288,3 +288,18 @@ width: 50% !important;
 #currentTime,#duration,.modal-title,.card-title {
   color: #4A556D !important;
 }
+
+.alert-primary {
+  background-color: #BF8B85 !important;
+  color: #F1F2EB !important;
+}
+
+.alert-secondary {
+  background-color: #4A556D !important;
+  color: #F1F2EB !important;
+}
+
+.alert-success {
+  background-color: #73877B !important;
+  color: #F1F2EB !important;
+}
