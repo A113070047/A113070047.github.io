@@ -38,10 +38,9 @@
         <body id="page-top">
 
             <div class="loading"></div>
-            <div class="red"></div>
-            <div class="yellow"></div>
-            <div class="blue"></div>
-    <div class="main-content">
+            <div class="first"></div>
+            <div class="second"></div>
+            <div class="third"></div>
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"    id="sideNav">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">
@@ -383,8 +382,7 @@
                   </div>
                 </div>
             -->
-    
-    </div>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
@@ -397,30 +395,29 @@
         </script>
 
         <script>
+            
+            //loading//
             const loading = document.querySelector('.loading');
             loading.addEventListener('animationend', () => {
             loading.style.display = 'none';
             })
 
-            const red = document.querySelector('.red');
-            red.addEventListener('animationend', () => {
-            red.style.display = 'none';
+            const firstcircle = document.querySelector('.first');
+            firstcircle.addEventListener('animationend', () => {
+            firstcircle.style.display = 'none';
             });
 
-            const yellow = document.querySelector('.yellow');
-            yellow.addEventListener('animationend', () => {
-            yellow.style.display = 'none';
+            const secondcircle = document.querySelector('.second');
+            secondcircle.addEventListener('animationend', () => {
+            secondcircle.style.display = 'none';
             });
 
-            const blue = document.querySelector('.blue');
-            blue.addEventListener('animationend', () => {
-            blue.style.display = 'none';
+            const thirdcircle = document.querySelector('.third');
+            thirdcircle.addEventListener('animationend', () => {
+            thirdcircle.style.display = 'none';
             });
-
-
-
-
-
+            //loading//
+            
             // Add this inside the <script> tag at the bottom of the HTML
         const playPauseBtn = document.getElementById('playPauseBtn');
         const modalfooter = document.querySelector('.btn-c');

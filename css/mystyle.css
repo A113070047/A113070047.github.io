@@ -11,42 +11,42 @@
 	background: #73877B;
   animation: loading 2.2s ease forwards;
 }
-.red {
+.first {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 10000;
-  background-color: red;
+  background-color:#BF8B85;
   clip-path: circle(1%);
-  animation: redcircle 0.6s ease forwards;
+  animation: firstcircle 0.6s ease forwards;
   animation-delay: 1s;
 }
 
-.yellow {
+.second {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 10000;
-  background-color: yellow;
+  background-color: #4A556D;
   clip-path: circle(1%);
-  animation: yellowcircle 0.6s ease forwards;
+  animation: secondcircle 0.6s ease forwards;
   animation-delay: 1.3s;
 }
 
-.blue {
+.third {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 10000;
-  background-color: blue;
+  background-color: #F1F2EB;
   clip-path: circle(1%) ;
-  animation: bluecircle 0.6s ease forwards;
+  animation: thirdcircle 0.6s ease forwards;
   animation-delay: 1.6s;
 }
 
@@ -59,7 +59,7 @@
     background: #73877B;
   }
 }
-@keyframes redcircle {
+@keyframes firstcircle {
   from{
     clip-path: circle(1%);
     z-index: 100005;
@@ -70,7 +70,7 @@
   }
 
 }
-@keyframes yellowcircle {
+@keyframes secondcircle {
   from{
     clip-path: circle(1%);
     z-index: 100005;
@@ -82,7 +82,7 @@
 
 }
 
-@keyframes bluecircle {
+@keyframes thirdcircle {
   from{
     clip-path: circle(1%);
     z-index: 100005;
@@ -101,6 +101,26 @@
 
 .bg-primary {
   background-color: #73877B !important;
+}
+
+h1 {
+  color:#4A556D !important;
+}
+
+h2 {
+  color: #4A556D !important;
+}
+
+h3 {
+  color: #73877B !important;
+}
+
+body {
+  color: #4A556D !important;
+}
+
+.flex-shrink-0 .text-primary {
+  color: #4A556D !important;
 }
 
 .resume-section-content h1 span {
@@ -125,11 +145,11 @@ width: 50% !important;
 .btn-primary {
   background-color: #73877B !important;
   border: #73877B !important;
-  color: #fff !important;
+  color: #F1F2EB !important;
 }
 
 .btn-text {
-  color: #fff !important;
+  color: #F1F2EB !important;
 }
 
 .music-url{
@@ -161,6 +181,9 @@ width: 50% !important;
   overflow: visible !important;
 }
 
+.figure-caption {
+  color: #4A556D !important;
+}
 
 .figure::after {
   background-color: #73877B;
@@ -170,7 +193,6 @@ width: 50% !important;
   position: absolute !important;
   bottom: 1.3vw;
   right: 2.7vw;
-
   border-radius: 0.375rem;
   z-index: -1;
 }
