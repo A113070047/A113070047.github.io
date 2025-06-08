@@ -34,29 +34,23 @@
         <!-- Meta Tags Generated with https://metatags.io -->
 
     </head>
-    <div class="loading">
-	<div class="loadingSet">
-		
-	</div>
-	<div class="loadingElement loadingCircle -orange"></div>
-	<div class="loadingElement loadingCircle -blue"></div>
-	<div class="loadingElement -fromLpage"></div>
-</div>
-<div class="pTranAniElement">
-	<div class="pTranAni_circle -orange"></div>
-	<div class="pTranAni_circle -blue"></div>
-</div>
-    <div class="main-content">
+
         <body id="page-top">
+
+            <div class="loading"></div>
+            <div class="red"></div>
+            <div class="yellow"></div>
+            <div class="blue"></div>
+    <div class="main-content">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"    id="sideNav">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">
                     <span class="d-block d-lg-none"></span>
                     <span data-aos="zoom-in" class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav" data-aos="zoom-in">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">關於</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">經歷</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">學歷</a></li>
@@ -73,7 +67,7 @@
                 <!-- About-->
                 <section class="resume-section" id="about">
                     
-                    <div class="resume-section-content">
+                    <div class="resume-section-content" data-aos="zoom-in">
                         <h1 class="mb-0">
                             楊鈞程
                             <span class="text-primary">A113070047</span>
@@ -96,8 +90,8 @@
                 <!-- Experience-->
                 <section class="resume-section" id="experience">
                     <div class="resume-section-content">
-                        <h2 class="mb-5" data-aos="" data-aos-anchor-placement="">經歷</h2>
-                        <div class="d-flex flex-column flex-md-row justify-content-between mb-5" data-aos="" data-aos-anchor-placement="">
+                        <h2 class="mb-5" >經歷</h2>
+                        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                             <div class="flex-grow-1">
                                 <h3 class="mb-0">2025 CAPCOM CUP 11 - Street fighter 6</h3>
                                 <div class="subheading mb-3">沒有參賽在家看冠軍賽</div>
@@ -105,7 +99,7 @@
                             </div>
                             <div class="flex-shrink-0"><span class="text-primary">2025.3.5-2025.3.9</span></div>
                         </div>
-                        <div class="d-flex flex-column flex-md-row justify-content-between mb-5" data-aos="" data-aos-anchor-placement="">
+                        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                             <div class="flex-grow-1">
                                 <h3 class="mb-0">當打掃人員</h3>
                                 <div class="subheading mb-3">高中畢業幫我同學老爸打掃他買的房</div>
@@ -403,9 +397,33 @@
         </script>
 
         <script>
+            const loading = document.querySelector('.loading');
+            loading.addEventListener('animationend', () => {
+            loading.style.display = 'none';
+            })
+
+            const red = document.querySelector('.red');
+            red.addEventListener('animationend', () => {
+            red.style.display = 'none';
+            });
+
+            const yellow = document.querySelector('.yellow');
+            yellow.addEventListener('animationend', () => {
+            yellow.style.display = 'none';
+            });
+
+            const blue = document.querySelector('.blue');
+            blue.addEventListener('animationend', () => {
+            blue.style.display = 'none';
+            });
+
+
+
+
+
             // Add this inside the <script> tag at the bottom of the HTML
         const playPauseBtn = document.getElementById('playPauseBtn');
-        const modalfooter = document.querySelector('.btn-c')
+        const modalfooter = document.querySelector('.btn-c');
         const progressBar = document.querySelector('.progress-bar');
         const currentTimeSpan = document.getElementById('currentTime');
         const durationSpan = document.getElementById('duration');
