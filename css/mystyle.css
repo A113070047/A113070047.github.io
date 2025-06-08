@@ -8,7 +8,7 @@ html {
 /*-----------------------------------------------
  * LOADING
 -------------------------------------------------*/
-.loading{
+/*.loading{
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -99,12 +99,12 @@ html {
     z-index: 100005;
   }
 
-}
+}*/
 
 /*loading*/
-[data-aos="zoom-in"] {
+/*[data-aos="zoom-in"] {
   transition-delay: 2.2s !important ;
-}
+}*/
 
 .about-bg{
   background: url(../assets/img/こんにちは.png) no-repeat center transparent;
