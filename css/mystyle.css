@@ -2,13 +2,11 @@ html {
   overflow-x: hidden !important;
 }
 
-/** {
-  border: 2px solid red;
-}
+
 /*-----------------------------------------------
  * LOADING
 -------------------------------------------------*/
-/*.loading{
+.loading{
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -99,12 +97,12 @@ html {
     z-index: 100005;
   }
 
-}*/
+}
 
 /*loading*/
-/*[data-aos="zoom-in"] {
+[data-aos="zoom-in"] {
   transition-delay: 2.2s !important ;
-}*/
+}
 
 .about-bg{
   background: url(../assets/img/こんにちは.png) no-repeat center transparent;
@@ -303,3 +301,9 @@ width: 50% !important;
   background-color: #73877B !important;
   color: #F1F2EB !important;
 }
+
+#portfolio {
+  padding-top: 0 !important;
+  margin-top:0 !important ;
+}
+
