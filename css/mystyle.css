@@ -160,6 +160,7 @@ width: 50% !important;
   padding-top: 20px;
   padding-bottom: 10px;
 }
+
 .cover-pm {
   padding: 0 !important;
   margin: 0 !important;
@@ -170,7 +171,6 @@ width: 50% !important;
   padding: 0 !important;
   margin: 0 !important;
 }
-
 
 .game-size {
   width: 90%;
@@ -196,7 +196,6 @@ width: 50% !important;
   border-radius: 0.375rem;
   z-index: -1;
 }
-
 .gakumasu::after {
   background-color: #73877B;
   content: "";
@@ -208,6 +207,34 @@ width: 50% !important;
   border-radius: 0.375rem;
   z-index: -1;
 }
+@media (max-width: 600px) {
+  .figure::after {
+  background-color: #73877B;
+  content: "";
+  height: 78% !important;
+  width: 90% !important;
+  position: absolute !important;
+  bottom: 4.8vw !important;
+  right: 2.7vw !important;
+  border-radius: 0.375rem;
+  z-index: -1;
+}
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .figure::after {
+  background-color: #73877B;
+  content: "";
+  height: 85% !important;
+  width: 90% !important;
+  position: absolute !important;
+  bottom: 3vw !important;
+  right: 3.5vw !important;
+  border-radius: 0.375rem;
+  z-index: -1;
+}
+}
+
 .animehw {
   height: 600px;
 }
